@@ -1,12 +1,15 @@
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 
 import * as reducers from './reducers/reducers'
 import * as actions from './actions/actions'
 import { l } from '../utility/log-helper'
+import thunk from 'redux-thunk'
 
 
-export const store = createStore(reducers.deafultReducer, {})
+const enhancer = compose(applyMiddleware(thunk))
+
+export const store = createStore(reducers.deafultReducer, {}, enhancer)
 
 export const test = (store) => {
     store.dispatch(actions.test({

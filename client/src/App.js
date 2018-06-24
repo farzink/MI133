@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux'
 import './App.css';
+import { testApi } from './data/actions/actions';
+
 
 
 class App extends Component {
+  componentDidMount(){
+    this.props.apiCall()
+  }
   render() {
     return (
       <div className="App">
@@ -18,5 +23,12 @@ class App extends Component {
     );
   }
 }
-
-export default App;
+const stp = (state, props) => {
+  return {
+    state
+  }
+}
+const atp = {
+  apiCall: testApi 
+}
+export default connect(stp, atp)(App);
