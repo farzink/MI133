@@ -4,14 +4,14 @@ import './loader.css'
 
 
 
-const Loader = ({ status }) => (
-  <div className="overlay">
-    <div style={{ display: (status ? 'block' : 'None') }} className="loader"></div>
+const Loader = ({ loading }) => (
+  <div style={{ display: (loading ? 'block' : 'None') }} className="overlay">    
+      <div className="center loader"></div>    
   </div>
 )
 
 Loader.propTypes = {
-  status: PropTypes.bool
+  loading: PropTypes.bool
 }
 
 

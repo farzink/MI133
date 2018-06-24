@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Loader status/>
+        <Loader loading/>
         <p>mi133 is up and running
           </p>
         <p>
